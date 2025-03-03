@@ -1,0 +1,75 @@
+# 站点信息
+site_name: demo
+
+# 主题设置
+theme:
+  name: material
+  #custom_dir: docs/overrides #覆写路径
+  language: zh
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  font:
+     text: Bitter  # 文本字体
+     code: Roboto Mono  # 代码字体
+
+  # 调色板配置
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: 切换至暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: 切换至亮色模式
+
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky    # 导航带粘性
+    - navigation.instant
+    - navigation.top    # 返回顶部按钮
+    #- navigation.expand   # 展开导航
+    - navigation.indexes  # 启用节索引页后，可以将文档直接附加到节
+    #- navigation.sections  # 侧边栏分章节显示
+    #- toc.integrate      # 集成目录
+    - navigation.footer             # 启用页脚（上一页、下一页）
+
+    - search.suggest                # 搜索建议
+    - search.highlight              # 搜索高亮显示
+    - search.share                  # 搜索分享
+
+  # 导航栏设置
+  nav_style: dark          # 导航栏样式
+  #collapse_navigation: true # 折叠导航
+
+
+
+# Markdown 扩展
+markdown_extensions:
+  - abbr
+  - meta
+  - tables
+  - admonition        # 信息块
+  - attr_list         # 属性列表
+  - footnotes         # 脚注
+  - md_in_html        # HTML 中的 Markdown
+
+plugins:
+  - search
+  - awesome-nav
+  - pagetree
+  - mkdocs-breadcrumbs-plugin:
+      delimiter: " / "  # separator between sections
+      log_level: "WARNING"  # "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
+      generate_home_index: false
+      use_page_titles: true # use page title instead of path in breadcrumbs
+      home_text: "首页"
+
+
